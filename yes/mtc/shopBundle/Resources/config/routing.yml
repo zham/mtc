@@ -1,3 +1,0 @@
-mtcshopBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: mtcshopBundle:Default:index }
