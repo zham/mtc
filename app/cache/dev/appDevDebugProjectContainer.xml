@@ -28,9 +28,8 @@
       <parameter key="SonataEasyExtendsBundle">Sonata\EasyExtendsBundle\SonataEasyExtendsBundle</parameter>
       <parameter key="SimpleThingsEntityAuditBundle">SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle</parameter>
       <parameter key="WhiteOctoberPagerfantaBundle">WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle</parameter>
-      <parameter key="ApplicationSonataUserBundle">Application\Sonata\UserBundle\ApplicationSonataUserBundle</parameter>
       <parameter key="MtcShopBundle">Mtc\ShopBundle\MtcShopBundle</parameter>
-      <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
+      <parameter key="UserBundle">Mtc\UserBundle\UserBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -49,6 +48,8 @@
     <parameter key="mailer_password"></parameter>
     <parameter key="locale">fr</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="sonata.user.admin.user.entity">Mtc\UserBundle\Entity\User</parameter>
+    <parameter key="sonata.user.admin.group.entity">Mtc\UserBundle\Entity\Group</parameter>
     <parameter key="router_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\RouterListener</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
@@ -368,9 +369,8 @@
       <parameter>SonataEasyExtendsBundle</parameter>
       <parameter>SimpleThingsEntityAuditBundle</parameter>
       <parameter>WhiteOctoberPagerfantaBundle</parameter>
-      <parameter>ApplicationSonataUserBundle</parameter>
       <parameter>MtcShopBundle</parameter>
-      <parameter>AcmeDemoBundle</parameter>
+      <parameter>UserBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
       <parameter>SensioGeneratorBundle</parameter>
@@ -423,7 +423,7 @@
     <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
     <parameter key="fos_user.firewall_name">main</parameter>
     <parameter key="fos_user.model_manager_name">null</parameter>
-    <parameter key="fos_user.model.user.class">Application\Sonata\UserBundle\Entity\User</parameter>
+    <parameter key="fos_user.model.user.class">Mtc\UserBundle\Entity\User</parameter>
     <parameter key="fos_user.template.engine">twig</parameter>
     <parameter key="fos_user.template.theme">FOSUserBundle::form.html.twig</parameter>
     <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
@@ -532,8 +532,6 @@
     <parameter key="sonata.user.form.type.security_roles.class">Sonata\UserBundle\Form\Type\SecurityRolesType</parameter>
     <parameter key="sonata.user.profile.form.type.class">Sonata\UserBundle\Form\Type\ProfileType</parameter>
     <parameter key="sonata.user.profile.form.handler.default.class">Sonata\UserBundle\Form\Handler\ProfileFormHandler</parameter>
-    <parameter key="sonata.user.admin.user.entity">Application\Sonata\UserBundle\Entity\User</parameter>
-    <parameter key="sonata.user.admin.group.entity">Application\Sonata\UserBundle\Entity\Group</parameter>
     <parameter key="sonata.user.impersonating_route">homepage</parameter>
     <parameter key="sonata.user.google.authenticator.enabled">false</parameter>
     <parameter key="sonata.user.profile.form.type">sonata_user_profile</parameter>
@@ -543,8 +541,8 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="simplethings.entityaudit.audited_entities" type="collection">
-      <parameter>Application\Sonata\UserBundle\Entity\User</parameter>
-      <parameter>Application\Sonata\UserBundle\Entity\Group</parameter>
+      <parameter>Mtc\UserBundle\Entity\User</parameter>
+      <parameter>Mtc\UserBundle\Entity\Group</parameter>
     </parameter>
     <parameter key="simplethings.entityaudit.table_prefix"></parameter>
     <parameter key="simplethings.entityaudit.table_suffix">_audit</parameter>
@@ -787,14 +785,6 @@
         <argument type="collection">
           <argument>simplethings_entityaudit.request.current_user_listener</argument>
           <argument>handle</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListenerService">
-        <argument>kernel.controller</argument>
-        <argument type="collection">
-          <argument>acme.demo.listener</argument>
-          <argument>onKernelController</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -1565,6 +1555,12 @@
         <argument>fr</argument>
         <argument>messages</argument>
       </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Resources/translations/UserBundle.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>UserBundle</argument>
+      </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
@@ -2097,7 +2093,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>50d5d5f4c3c25</argument>
+            <argument>50d855822c55a</argument>
           </service>
         </argument>
         <argument type="service">
@@ -2111,7 +2107,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>50d5d5f4c3c25</argument>
+            <argument>50d855822c55a</argument>
           </service>
         </argument>
       </argument>
@@ -2383,7 +2379,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>50d5d5f4c3c25</argument>
+            <argument>50d855822c55a</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -2467,7 +2463,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>50d5d5f4c3c25</argument>
+            <argument>50d855822c55a</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -2619,9 +2615,6 @@
           </service>
         </argument>
       </call>
-      <call method="addExtension">
-        <argument type="service" id="twig.extension.acme.demo"/>
-      </call>
       <call method="addGlobal">
         <argument>sonata_user</argument>
         <argument type="service" id="sonata.user.twig.global"/>
@@ -2751,8 +2744,8 @@
             <argument type="collection">
               <argument key="FOSUserBundle">FOS\UserBundle\Entity</argument>
               <argument key="SonataUserBundle">Sonata\UserBundle\Entity</argument>
-              <argument key="ApplicationSonataUserBundle">Application\Sonata\UserBundle\Entity</argument>
               <argument key="MtcShopBundle">Mtc\ShopBundle\Entity</argument>
+              <argument key="UserBundle">Mtc\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2791,13 +2784,11 @@
                       <argument type="collection">
                         <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
                         <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine</argument>
-                        <argument>/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
                           <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
                           <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine">Sonata\UserBundle\Entity</argument>
-                          <argument key="/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine">Application\Sonata\UserBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -2813,13 +2804,11 @@
                       <argument type="collection">
                         <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
                         <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine</argument>
-                        <argument>/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
                           <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
                           <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine">Sonata\UserBundle\Entity</argument>
-                          <argument key="/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine">Application\Sonata\UserBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -2831,25 +2820,19 @@
                 </call>
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver" public="false">
-                      <argument type="collection">
-                        <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
-                        <argument>/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine</argument>
-                        <argument>/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine</argument>
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
                       </argument>
-                      <call method="setNamespacePrefixes">
-                        <argument type="collection">
-                          <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
-                          <argument key="/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine">Sonata\UserBundle\Entity</argument>
-                          <argument key="/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine">Application\Sonata\UserBundle\Entity</argument>
-                        </argument>
-                      </call>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
+                      <argument type="collection">
+                        <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Entity</argument>
+                        <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Entity</argument>
+                      </argument>
                     </service>
                   </argument>
-                  <argument>Application\Sonata\UserBundle\Entity</argument>
+                  <argument>Mtc\ShopBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -2861,10 +2844,11 @@
                       </argument>
                       <argument type="collection">
                         <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Entity</argument>
+                        <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
-                  <argument>Mtc\ShopBundle\Entity</argument>
+                  <argument>Mtc\UserBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -3461,33 +3445,6 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
-                  <argument>ApplicationSonataUserBundle</argument>
-                  <argument>/Applications/MAMP/htdocs/mtcommande/app/Resources/ApplicationSonataUserBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>ApplicationSonataUserBundle</argument>
-                  <argument>/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
                   <argument>MtcShopBundle</argument>
                   <argument>/Applications/MAMP/htdocs/mtcommande/app/Resources/MtcShopBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -3515,16 +3472,16 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
-                  <argument>AcmeDemoBundle</argument>
-                  <argument>/Applications/MAMP/htdocs/mtcommande/app/Resources/AcmeDemoBundle/views</argument>
+                  <argument>UserBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/mtcommande/app/Resources/UserBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
-                  <argument>AcmeDemoBundle</argument>
-                  <argument>/Applications/MAMP/htdocs/mtcommande/src/Acme/DemoBundle/Resources/views</argument>
+                  <argument>UserBundle</argument>
+                  <argument>/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -3756,7 +3713,7 @@
     </service>
     <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
       <tag name="form.type" alias="fos_user_profile"/>
-      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>Mtc\UserBundle\Entity\User</argument>
     </service>
     <service id="fos_user.registration.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
       <argument>fos_user_registration</argument>
@@ -3771,7 +3728,7 @@
     </service>
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
-      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>Mtc\UserBundle\Entity\User</argument>
     </service>
     <service id="fos_user.change_password.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
       <argument>fos_user_change_password</argument>
@@ -3849,8 +3806,8 @@
       </call>
       <call method="setAdminClasses">
         <argument type="collection">
-          <argument key="Application\Sonata\UserBundle\Entity\User">sonata.user.admin.user</argument>
-          <argument key="Application\Sonata\UserBundle\Entity\Group">sonata.user.admin.group</argument>
+          <argument key="Mtc\UserBundle\Entity\User">sonata.user.admin.user</argument>
+          <argument key="Mtc\UserBundle\Entity\Group">sonata.user.admin.group</argument>
         </argument>
       </call>
     </service>
@@ -3896,8 +3853,8 @@
       <call method="setReader">
         <argument>sonata.admin.audit.orm.reader</argument>
         <argument type="collection">
-          <argument>Application\Sonata\UserBundle\Entity\User</argument>
-          <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+          <argument>Mtc\UserBundle\Entity\User</argument>
+          <argument>Mtc\UserBundle\Entity\Group</argument>
         </argument>
       </call>
     </service>
@@ -4242,7 +4199,7 @@
     <service id="sonata.user.admin.user" class="Sonata\UserBundle\Admin\Entity\UserAdmin" scope="prototype">
       <tag name="sonata.admin" manager_type="orm" group="%sonata.user.admin.groupname%" label="users" label_catalogue="SonataUserBundle" label_translator_strategy="sonata.admin.label.strategy.underscore"/>
       <argument>sonata.user.admin.user</argument>
-      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>Mtc\UserBundle\Entity\User</argument>
       <argument>SonataAdminBundle:CRUD</argument>
       <call method="setUserManager">
         <argument type="service" id="fos_user.user_manager"/>
@@ -4329,7 +4286,7 @@
     <service id="sonata.user.admin.group" class="Sonata\UserBundle\Admin\Entity\GroupAdmin" scope="prototype">
       <tag name="sonata.admin" manager_type="orm" group="%sonata.user.admin.groupname%" label="groups" label_catalogue="SonataUserBundle" label_translator_strategy="sonata.admin.label.strategy.underscore"/>
       <argument>sonata.user.admin.group</argument>
-      <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+      <argument>Mtc\UserBundle\Entity\Group</argument>
       <argument>SonataAdminBundle:CRUD</argument>
       <call method="setTranslationDomain">
         <argument>SonataUserBundle</argument>
@@ -4427,7 +4384,7 @@
     </service>
     <service id="sonata.user.profile.form.type" class="Sonata\UserBundle\Form\Type\ProfileType">
       <tag name="form.type" alias="sonata_user_profile"/>
-      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>Mtc\UserBundle\Entity\User</argument>
     </service>
     <service id="sonata.user.twig.global" class="Sonata\UserBundle\Twig\GlobalVariables">
       <argument type="service" id="service_container"/>
@@ -4440,32 +4397,6 @@
       <tag name="doctrine.event_subscriber"/>
       <argument type="service" id="doctrine"/>
       <argument type="collection"/>
-      <call method="addAssociation">
-        <argument>Application\Sonata\UserBundle\Entity\User</argument>
-        <argument>mapManyToMany</argument>
-        <argument type="collection">
-          <argument type="collection">
-            <argument key="fieldName">groups</argument>
-            <argument key="targetEntity">Application\Sonata\UserBundle\Entity\Group</argument>
-            <argument key="cascade" type="collection"/>
-            <argument key="joinTable" type="collection">
-              <argument key="name">fos_user_user_group</argument>
-              <argument key="joinColumns" type="collection">
-                <argument type="collection">
-                  <argument key="name">user_id</argument>
-                  <argument key="referencedColumnName">id</argument>
-                </argument>
-              </argument>
-              <argument key="inverseJoinColumns" type="collection">
-                <argument type="collection">
-                  <argument key="name">group_id</argument>
-                  <argument key="referencedColumnName">id</argument>
-                </argument>
-              </argument>
-            </argument>
-          </argument>
-        </argument>
-      </call>
     </service>
     <service id="simplethings_entityaudit.manager" class="SimpleThings\EntityAudit\AuditManager">
       <argument type="service" id="simplethings_entityaudit.config"/>
@@ -4484,8 +4415,8 @@
     <service id="simplethings_entityaudit.config" class="SimpleThings\EntityAudit\AuditConfiguration">
       <call method="setAuditedEntityClasses">
         <argument type="collection">
-          <argument>Application\Sonata\UserBundle\Entity\User</argument>
-          <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+          <argument>Mtc\UserBundle\Entity\User</argument>
+          <argument>Mtc\UserBundle\Entity\Group</argument>
         </argument>
       </call>
       <call method="setTablePrefix">
@@ -4550,14 +4481,6 @@
           </argument>
         </argument>
       </call>
-    </service>
-    <service id="twig.extension.acme.demo" class="Acme\DemoBundle\Twig\Extension\DemoExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="twig.loader"/>
-    </service>
-    <service id="acme.demo.listener" class="Acme\DemoBundle\ControllerListener">
-      <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
-      <argument type="service" id="twig.extension.acme.demo"/>
     </service>
     <service id="web_profiler.debug_toolbar" class="Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener">
       <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" priority="-128"/>
@@ -4794,7 +4717,7 @@
           <argument>null</argument>
         </service>
       </argument>
-      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>Mtc\UserBundle\Entity\User</argument>
     </service>
     <service id="fos_user.profile.form.handler" class="FOS\UserBundle\Form\Handler\ProfileFormHandler" scope="request">
       <argument type="service" id="fos_user.profile.form"/>

@@ -13,16 +13,6 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerator
 {
     static private $declaredRouteNames = array(
-       '_welcome' => true,
-       '_demo_login' => true,
-       '_security_check' => true,
-       '_demo_logout' => true,
-       'acme_demo_secured_hello' => true,
-       '_demo_secured_hello' => true,
-       '_demo_secured_hello_admin' => true,
-       '_demo' => true,
-       '_demo_hello' => true,
-       '_demo_contact' => true,
        '_wdt' => true,
        '_profiler_search' => true,
        '_profiler_purge' => true,
@@ -57,24 +47,24 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'sonata_admin_append_form_element' => true,
        'sonata_admin_short_object_information' => true,
        'sonata_admin_set_object_field_value' => true,
-       'admin_sonata_user_user_list' => true,
-       'admin_sonata_user_user_create' => true,
-       'admin_sonata_user_user_batch' => true,
-       'admin_sonata_user_user_edit' => true,
-       'admin_sonata_user_user_delete' => true,
-       'admin_sonata_user_user_show' => true,
-       'admin_sonata_user_user_export' => true,
-       'admin_sonata_user_user_history' => true,
-       'admin_sonata_user_user_history_view_revision' => true,
-       'admin_sonata_user_group_list' => true,
-       'admin_sonata_user_group_create' => true,
-       'admin_sonata_user_group_batch' => true,
-       'admin_sonata_user_group_edit' => true,
-       'admin_sonata_user_group_delete' => true,
-       'admin_sonata_user_group_show' => true,
-       'admin_sonata_user_group_export' => true,
-       'admin_sonata_user_group_history' => true,
-       'admin_sonata_user_group_history_view_revision' => true,
+       'admin_mtc_user_user_list' => true,
+       'admin_mtc_user_user_create' => true,
+       'admin_mtc_user_user_batch' => true,
+       'admin_mtc_user_user_edit' => true,
+       'admin_mtc_user_user_delete' => true,
+       'admin_mtc_user_user_show' => true,
+       'admin_mtc_user_user_export' => true,
+       'admin_mtc_user_user_history' => true,
+       'admin_mtc_user_user_history_view_revision' => true,
+       'admin_mtc_user_group_list' => true,
+       'admin_mtc_user_group_create' => true,
+       'admin_mtc_user_group_batch' => true,
+       'admin_mtc_user_group_edit' => true,
+       'admin_mtc_user_group_delete' => true,
+       'admin_mtc_user_group_show' => true,
+       'admin_mtc_user_group_export' => true,
+       'admin_mtc_user_group_history' => true,
+       'admin_mtc_user_group_history_view_revision' => true,
        'homepage' => true,
     );
 
@@ -97,56 +87,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         list($variables, $defaults, $requirements, $tokens) = $this->{'get'.$escapedName.'RouteInfo'}();
 
         return $this->doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $absolute);
-    }
-
-    private function get_welcomeRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
-    }
-
-    private function get_demo_loginRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login',  ),));
-    }
-
-    private function get_security_checkRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login_check',  ),));
-    }
-
-    private function get_demo_logoutRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::logoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/logout',  ),));
-    }
-
-    private function getacme_demo_secured_helloRouteInfo()
-    {
-        return array(array (), array (  'name' => 'World',  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/hello',  ),));
-    }
-
-    private function get_demo_secured_helloRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/secured/hello',  ),));
-    }
-
-    private function get_demo_secured_hello_adminRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloadminAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/secured/hello/admin',  ),));
-    }
-
-    private function get_demoRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/',  ),));
-    }
-
-    private function get_demo_helloRouteInfo()
-    {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::helloAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/demo/hello',  ),));
-    }
-
-    private function get_demo_contactRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/contact',  ),));
     }
 
     private function get_wdtRouteInfo()
@@ -319,94 +259,94 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'sonata.admin.controller.admin:setObjectFieldValueAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/core/set-object-field-value',  ),));
     }
 
-    private function getadmin_sonata_user_user_listRouteInfo()
+    private function getadmin_mtc_user_user_listRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_list',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user/list',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_list',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user/list',  ),));
     }
 
-    private function getadmin_sonata_user_user_createRouteInfo()
+    private function getadmin_mtc_user_user_createRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_create',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user/create',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_create',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user/create',  ),));
     }
 
-    private function getadmin_sonata_user_user_batchRouteInfo()
+    private function getadmin_mtc_user_user_batchRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_batch',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user/batch',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_batch',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user/batch',  ),));
     }
 
-    private function getadmin_sonata_user_user_editRouteInfo()
+    private function getadmin_mtc_user_user_editRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_edit',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_edit',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user',  ),));
     }
 
-    private function getadmin_sonata_user_user_deleteRouteInfo()
+    private function getadmin_mtc_user_user_deleteRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_delete',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_delete',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user',  ),));
     }
 
-    private function getadmin_sonata_user_user_showRouteInfo()
+    private function getadmin_mtc_user_user_showRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_show',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_show',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user',  ),));
     }
 
-    private function getadmin_sonata_user_user_exportRouteInfo()
+    private function getadmin_mtc_user_user_exportRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_export',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user/export',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_export',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user/export',  ),));
     }
 
-    private function getadmin_sonata_user_user_historyRouteInfo()
+    private function getadmin_mtc_user_user_historyRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_history',), array (), array (  0 =>   array (    0 => 'text',    1 => '/history',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_history',), array (), array (  0 =>   array (    0 => 'text',    1 => '/history',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user',  ),));
     }
 
-    private function getadmin_sonata_user_user_history_view_revisionRouteInfo()
+    private function getadmin_mtc_user_user_history_view_revisionRouteInfo()
     {
-        return array(array (  0 => 'id',  1 => 'revision',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyViewRevisionAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_sonata_user_user_history_view_revision',), array (), array (  0 =>   array (    0 => 'text',    1 => '/view',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'revision',  ),  2 =>   array (    0 => 'text',    1 => '/history',  ),  3 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  4 =>   array (    0 => 'text',    1 => '/admin/sonata/user/user',  ),));
+        return array(array (  0 => 'id',  1 => 'revision',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyViewRevisionAction',  '_sonata_admin' => 'sonata.user.admin.user',  '_sonata_name' => 'admin_mtc_user_user_history_view_revision',), array (), array (  0 =>   array (    0 => 'text',    1 => '/view',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'revision',  ),  2 =>   array (    0 => 'text',    1 => '/history',  ),  3 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  4 =>   array (    0 => 'text',    1 => '/admin/mtc/user/user',  ),));
     }
 
-    private function getadmin_sonata_user_group_listRouteInfo()
+    private function getadmin_mtc_user_group_listRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_list',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group/list',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_list',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group/list',  ),));
     }
 
-    private function getadmin_sonata_user_group_createRouteInfo()
+    private function getadmin_mtc_user_group_createRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_create',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group/create',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_create',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group/create',  ),));
     }
 
-    private function getadmin_sonata_user_group_batchRouteInfo()
+    private function getadmin_mtc_user_group_batchRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_batch',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group/batch',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_batch',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group/batch',  ),));
     }
 
-    private function getadmin_sonata_user_group_editRouteInfo()
+    private function getadmin_mtc_user_group_editRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_edit',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_edit',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group',  ),));
     }
 
-    private function getadmin_sonata_user_group_deleteRouteInfo()
+    private function getadmin_mtc_user_group_deleteRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_delete',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_delete',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group',  ),));
     }
 
-    private function getadmin_sonata_user_group_showRouteInfo()
+    private function getadmin_mtc_user_group_showRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_show',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_show',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group',  ),));
     }
 
-    private function getadmin_sonata_user_group_exportRouteInfo()
+    private function getadmin_mtc_user_group_exportRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_export',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group/export',  ),));
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_export',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group/export',  ),));
     }
 
-    private function getadmin_sonata_user_group_historyRouteInfo()
+    private function getadmin_mtc_user_group_historyRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_history',), array (), array (  0 =>   array (    0 => 'text',    1 => '/history',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_history',), array (), array (  0 =>   array (    0 => 'text',    1 => '/history',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group',  ),));
     }
 
-    private function getadmin_sonata_user_group_history_view_revisionRouteInfo()
+    private function getadmin_mtc_user_group_history_view_revisionRouteInfo()
     {
-        return array(array (  0 => 'id',  1 => 'revision',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyViewRevisionAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_sonata_user_group_history_view_revision',), array (), array (  0 =>   array (    0 => 'text',    1 => '/view',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'revision',  ),  2 =>   array (    0 => 'text',    1 => '/history',  ),  3 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  4 =>   array (    0 => 'text',    1 => '/admin/sonata/user/group',  ),));
+        return array(array (  0 => 'id',  1 => 'revision',), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::historyViewRevisionAction',  '_sonata_admin' => 'sonata.user.admin.group',  '_sonata_name' => 'admin_mtc_user_group_history_view_revision',), array (), array (  0 =>   array (    0 => 'text',    1 => '/view',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'revision',  ),  2 =>   array (    0 => 'text',    1 => '/history',  ),  3 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  4 =>   array (    0 => 'text',    1 => '/admin/mtc/user/group',  ),));
     }
 
     private function gethomepageRouteInfo()

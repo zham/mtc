@@ -33,19 +33,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'acme.demo.listener' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Acme\DemoBundle\ControllerListener A Acme\DemoBundle\ControllerListener instance.
-     */
-    protected function getAcme_Demo_ListenerService()
-    {
-        return $this->services['acme.demo.listener'] = new \Acme\DemoBundle\ControllerListener($this->get('twig.extension.acme.demo'));
-    }
-
-    /**
      * Gets the 'annotation_reader' service.
      *
      * This service is shared.
@@ -92,9 +79,8 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SonataEasyExtendsBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/SonataEasyExtendsBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SonataEasyExtendsBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/EasyExtendsBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SimpleThingsEntityAuditBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/SimpleThingsEntityAuditBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SimpleThingsEntityAuditBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/SimpleThings/EntityAudit/src/SimpleThings/EntityAudit/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WhiteOctoberPagerfantaBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/WhiteOctoberPagerfantaBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WhiteOctoberPagerfantaBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/WhiteOctober/PagerfantaBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'ApplicationSonataUserBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/ApplicationSonataUserBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'ApplicationSonataUserBundle', '/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MtcShopBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/MtcShopBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MtcShopBundle', '/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AcmeDemoBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/AcmeDemoBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AcmeDemoBundle', '/Applications/MAMP/htdocs/mtcommande/src/Acme/DemoBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'UserBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/UserBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'UserBundle', '/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/WebProfilerBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioDistributionBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/SensioDistributionBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioDistributionBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioGeneratorBundle', '/Applications/MAMP/htdocs/mtcommande/app/Resources/SensioGeneratorBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioGeneratorBundle', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sensio/Bundle/GeneratorBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
@@ -243,8 +229,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_1d916edf72aa64e2bc646bfb455f0745');
+        $a = $this->get('annotation_reader');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
         $b->setNamespace('sf2orm_default_1d916edf72aa64e2bc646bfb455f0745');
@@ -252,28 +237,35 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_1d916edf72aa64e2bc646bfb455f0745');
 
-        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver(array(0 => '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine', 1 => '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine', 2 => '/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine'));
-        $d->setNamespacePrefixes(array('/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine' => 'FOS\\UserBundle\\Entity', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine' => 'Sonata\\UserBundle\\Entity', '/Applications/MAMP/htdocs/mtcommande/app/Application/Sonata/UserBundle/Resources/config/doctrine' => 'Application\\Sonata\\UserBundle\\Entity'));
-        $d->setGlobalBasename('mapping');
+        $d = new \Doctrine\Common\Cache\ArrayCache();
+        $d->setNamespace('sf2orm_default_1d916edf72aa64e2bc646bfb455f0745');
 
-        $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver($d, 'FOS\\UserBundle\\Entity');
-        $e->addDriver($d, 'Sonata\\UserBundle\\Entity');
-        $e->addDriver($d, 'Application\\Sonata\\UserBundle\\Entity');
-        $e->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver(new \Symfony\Bridge\Doctrine\Annotations\IndexedReader($this->get('annotation_reader')), array(0 => '/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Entity')), 'Mtc\\ShopBundle\\Entity');
+        $e = new \Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver(array(0 => '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine', 1 => '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine'));
+        $e->setNamespacePrefixes(array('/Applications/MAMP/htdocs/mtcommande/vendor/bundles/FOS/UserBundle/Resources/config/doctrine' => 'FOS\\UserBundle\\Entity', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/Sonata/UserBundle/Resources/config/doctrine' => 'Sonata\\UserBundle\\Entity'));
+        $e->setGlobalBasename('mapping');
 
-        $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('FOSUserBundle' => 'FOS\\UserBundle\\Entity', 'SonataUserBundle' => 'Sonata\\UserBundle\\Entity', 'ApplicationSonataUserBundle' => 'Application\\Sonata\\UserBundle\\Entity', 'MtcShopBundle' => 'Mtc\\ShopBundle\\Entity'));
-        $f->setMetadataCacheImpl($a);
-        $f->setQueryCacheImpl($b);
-        $f->setResultCacheImpl($c);
-        $f->setMetadataDriverImpl($e);
-        $f->setProxyDir('/Applications/MAMP/htdocs/mtcommande/app/cache/dev/doctrine/orm/Proxies');
-        $f->setProxyNamespace('Proxies');
-        $f->setAutoGenerateProxyClasses(true);
-        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $f = new \Symfony\Bridge\Doctrine\Annotations\IndexedReader($a);
 
-        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $f);
+        $g = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($f, array(0 => '/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Entity', 1 => '/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Entity'));
+
+        $h = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $h->addDriver($e, 'FOS\\UserBundle\\Entity');
+        $h->addDriver($e, 'Sonata\\UserBundle\\Entity');
+        $h->addDriver($g, 'Mtc\\ShopBundle\\Entity');
+        $h->addDriver($g, 'Mtc\\UserBundle\\Entity');
+
+        $i = new \Doctrine\ORM\Configuration();
+        $i->setEntityNamespaces(array('FOSUserBundle' => 'FOS\\UserBundle\\Entity', 'SonataUserBundle' => 'Sonata\\UserBundle\\Entity', 'MtcShopBundle' => 'Mtc\\ShopBundle\\Entity', 'UserBundle' => 'Mtc\\UserBundle\\Entity'));
+        $i->setMetadataCacheImpl($b);
+        $i->setQueryCacheImpl($c);
+        $i->setResultCacheImpl($d);
+        $i->setMetadataDriverImpl($h);
+        $i->setProxyDir('/Applications/MAMP/htdocs/mtcommande/app/cache/dev/doctrine/orm/Proxies');
+        $i->setProxyNamespace('Proxies');
+        $i->setAutoGenerateProxyClasses(true);
+        $i->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+
+        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $i);
     }
 
     /**
@@ -335,7 +327,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addListenerService('kernel.controller', array(0 => 'security.extra.controller_listener', 1 => 'onCoreController'), -255);
         $instance->addListenerService('security.interactive_login', array(0 => 'fos_user.security.interactive_login_listener', 1 => 'onSecurityInteractiveLogin'), 0);
         $instance->addListenerService('kernel.request', array(0 => 'simplethings_entityaudit.request.current_user_listener', 1 => 'handle'), 0);
-        $instance->addListenerService('kernel.controller', array(0 => 'acme.demo.listener', 1 => 'onKernelController'), 0);
         $instance->addListenerService('kernel.response', array(0 => 'web_profiler.debug_toolbar', 1 => 'onKernelResponse'), -128);
 
         return $instance;
@@ -918,7 +909,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFosUser_Profile_Form_TypeService()
     {
-        return $this->services['fos_user.profile.form.type'] = new \FOS\UserBundle\Form\Type\ProfileFormType('Application\\Sonata\\UserBundle\\Entity\\User');
+        return $this->services['fos_user.profile.form.type'] = new \FOS\UserBundle\Form\Type\ProfileFormType('Mtc\\UserBundle\\Entity\\User');
     }
 
     /**
@@ -961,7 +952,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFosUser_Registration_Form_TypeService()
     {
-        return $this->services['fos_user.registration.form.type'] = new \FOS\UserBundle\Form\Type\RegistrationFormType('Application\\Sonata\\UserBundle\\Entity\\User');
+        return $this->services['fos_user.registration.form.type'] = new \FOS\UserBundle\Form\Type\RegistrationFormType('Mtc\\UserBundle\\Entity\\User');
     }
 
     /**
@@ -1045,7 +1036,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('fos_user.util.email_canonicalizer');
 
-        return $this->services['fos_user.user_manager'] = new \FOS\UserBundle\Entity\UserManager($this->get('security.encoder_factory'), $a, $a, $this->get('doctrine')->getEntityManager(NULL), 'Application\\Sonata\\UserBundle\\Entity\\User');
+        return $this->services['fos_user.user_manager'] = new \FOS\UserBundle\Entity\UserManager($this->get('security.encoder_factory'), $a, $a, $this->get('doctrine')->getEntityManager(NULL), 'Mtc\\UserBundle\\Entity\\User');
     }
 
     /**
@@ -1624,7 +1615,7 @@ class appDevDebugProjectContainer extends Container
         $e = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $d, '/admin/logout', '/', NULL);
         $e->addHandler($this->get('security.logout.handler.session'));
 
-        return $this->services['security.firewall.map.context.admin'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_manager')), 'admin', $b, $c), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $d, 'admin', array('check_path' => '/admin/login_check', 'login_path' => '/admin/login', 'use_forward' => false, 'failure_path' => NULL, 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false, 'failure_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), NULL, NULL, $b, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '50d5d5f4c3c25', $b), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($this->get('http_kernel'), $d, '/admin/login', false), NULL, NULL, $b));
+        return $this->services['security.firewall.map.context.admin'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_manager')), 'admin', $b, $c), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $d, 'admin', array('check_path' => '/admin/login_check', 'login_path' => '/admin/login', 'use_forward' => false, 'failure_path' => NULL, 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false, 'failure_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), NULL, NULL, $b, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '50d855822c55a', $b), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($this->get('http_kernel'), $d, '/admin/login', false), NULL, NULL, $b));
     }
 
     /**
@@ -1645,7 +1636,7 @@ class appDevDebugProjectContainer extends Container
         $e = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $d, '/logout', '/', NULL);
         $e->addHandler($this->get('security.logout.handler.session'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_manager')), 'main', $b, $c), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $d, 'main', array('check_path' => '/login_check', 'login_path' => '/login', 'use_forward' => false, 'default_target_path' => '/home', 'failure_path' => NULL, 'always_use_default_target_path' => false, 'target_path_parameter' => '_target_path', 'use_referer' => false, 'failure_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), NULL, NULL, $b, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '50d5d5f4c3c25', $b), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($this->get('http_kernel'), $d, '/login', false), NULL, NULL, $b));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => $this->get('fos_user.user_manager')), 'main', $b, $c), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $d, 'main', array('check_path' => '/login_check', 'login_path' => '/login', 'use_forward' => false, 'default_target_path' => '/home', 'failure_path' => NULL, 'always_use_default_target_path' => false, 'target_path_parameter' => '_target_path', 'use_referer' => false, 'failure_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), NULL, NULL, $b, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '50d855822c55a', $b), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $this->get('security.authentication.trust_resolver'), $d, new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($this->get('http_kernel'), $d, '/login', false), NULL, NULL, $b));
     }
 
     /**
@@ -1820,7 +1811,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['simplethings_entityaudit.config'] = $instance = new \SimpleThings\EntityAudit\AuditConfiguration();
 
-        $instance->setAuditedEntityClasses(array(0 => 'Application\\Sonata\\UserBundle\\Entity\\User', 1 => 'Application\\Sonata\\UserBundle\\Entity\\Group'));
+        $instance->setAuditedEntityClasses(array(0 => 'Mtc\\UserBundle\\Entity\\User', 1 => 'Mtc\\UserBundle\\Entity\\Group'));
         $instance->setTablePrefix('');
         $instance->setTableSuffix('_audit');
         $instance->setRevisionFieldName('rev');
@@ -1908,7 +1899,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['sonata.admin.audit.manager'] = $instance = new \Sonata\AdminBundle\Model\AuditManager($this);
 
-        $instance->setReader('sonata.admin.audit.orm.reader', array(0 => 'Application\\Sonata\\UserBundle\\Entity\\User', 1 => 'Application\\Sonata\\UserBundle\\Entity\\Group'));
+        $instance->setReader('sonata.admin.audit.orm.reader', array(0 => 'Mtc\\UserBundle\\Entity\\User', 1 => 'Mtc\\UserBundle\\Entity\\Group'));
 
         return $instance;
     }
@@ -2574,7 +2565,7 @@ class appDevDebugProjectContainer extends Container
         $instance->setTemplates(array('user_block' => 'SonataUserBundle:Admin/Core:user_block.html.twig', 'layout' => 'SonataAdminBundle::standard_layout.html.twig', 'ajax' => 'SonataAdminBundle::ajax_layout.html.twig', 'list' => 'SonataAdminBundle:CRUD:list.html.twig', 'show' => 'SonataAdminBundle:CRUD:show.html.twig', 'edit' => 'SonataAdminBundle:CRUD:edit.html.twig', 'dashboard' => 'SonataAdminBundle:Core:dashboard.html.twig', 'preview' => 'SonataAdminBundle:CRUD:preview.html.twig', 'history' => 'SonataAdminBundle:CRUD:history.html.twig', 'history_revision' => 'SonataAdminBundle:CRUD:history_revision.html.twig', 'action' => 'SonataAdminBundle:CRUD:action.html.twig', 'short_object_description' => 'SonataAdminBundle:Helper:short-object-description.html.twig'));
         $instance->setAdminServiceIds(array(0 => 'sonata.user.admin.user', 1 => 'sonata.user.admin.group'));
         $instance->setAdminGroups(array('sonata_user' => array('label' => 'sonata_user', 'label_catalogue' => 'SonataUserBundle', 'items' => array(0 => 'sonata.user.admin.user', 1 => 'sonata.user.admin.group'))));
-        $instance->setAdminClasses(array('Application\\Sonata\\UserBundle\\Entity\\User' => 'sonata.user.admin.user', 'Application\\Sonata\\UserBundle\\Entity\\Group' => 'sonata.user.admin.group'));
+        $instance->setAdminClasses(array('Mtc\\UserBundle\\Entity\\User' => 'sonata.user.admin.user', 'Mtc\\UserBundle\\Entity\\Group' => 'sonata.user.admin.group'));
 
         return $instance;
     }
@@ -2879,11 +2870,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSonata_EasyExtends_Doctrine_MapperService()
     {
-        $this->services['sonata.easy_extends.doctrine.mapper'] = $instance = new \Sonata\EasyExtendsBundle\Mapper\DoctrineORMMapper($this->get('doctrine'), array());
-
-        $instance->addAssociation('Application\\Sonata\\UserBundle\\Entity\\User', 'mapManyToMany', array(0 => array('fieldName' => 'groups', 'targetEntity' => 'Application\\Sonata\\UserBundle\\Entity\\Group', 'cascade' => array(), 'joinTable' => array('name' => 'fos_user_user_group', 'joinColumns' => array(0 => array('name' => 'user_id', 'referencedColumnName' => 'id')), 'inverseJoinColumns' => array(0 => array('name' => 'group_id', 'referencedColumnName' => 'id'))))));
-
-        return $instance;
+        return $this->services['sonata.easy_extends.doctrine.mapper'] = new \Sonata\EasyExtendsBundle\Mapper\DoctrineORMMapper($this->get('doctrine'), array());
     }
 
     /**
@@ -2945,7 +2932,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSonata_User_Admin_GroupService()
     {
-        $instance = new \Sonata\UserBundle\Admin\Entity\GroupAdmin('sonata.user.admin.group', 'Application\\Sonata\\UserBundle\\Entity\\Group', 'SonataAdminBundle:CRUD');
+        $instance = new \Sonata\UserBundle\Admin\Entity\GroupAdmin('sonata.user.admin.group', 'Mtc\\UserBundle\\Entity\\Group', 'SonataAdminBundle:CRUD');
 
         $instance->setTranslationDomain('SonataUserBundle');
         $instance->setLabelTranslatorStrategy($this->get('sonata.admin.label.strategy.underscore'));
@@ -2979,7 +2966,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSonata_User_Admin_UserService()
     {
-        $instance = new \Sonata\UserBundle\Admin\Entity\UserAdmin('sonata.user.admin.user', 'Application\\Sonata\\UserBundle\\Entity\\User', 'SonataAdminBundle:CRUD');
+        $instance = new \Sonata\UserBundle\Admin\Entity\UserAdmin('sonata.user.admin.user', 'Mtc\\UserBundle\\Entity\\User', 'SonataAdminBundle:CRUD');
 
         $instance->setUserManager($this->get('fos_user.user_manager'));
         $instance->setTranslationDomain('SonataUserBundle');
@@ -3060,7 +3047,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSonata_User_Profile_Form_TypeService()
     {
-        return $this->services['sonata.user.profile.form.type'] = new \Sonata\UserBundle\Form\Type\ProfileType('Application\\Sonata\\UserBundle\\Entity\\User');
+        return $this->services['sonata.user.profile.form.type'] = new \Sonata\UserBundle\Form\Type\ProfileType('Mtc\\UserBundle\\Entity\\User');
     }
 
     /**
@@ -3479,6 +3466,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource('xliff', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/WhiteOctober/PagerfantaBundle/Resources/translations/pagerfanta.pt.xliff', 'pt', 'pagerfanta');
         $instance->addResource('xliff', '/Applications/MAMP/htdocs/mtcommande/vendor/bundles/WhiteOctober/PagerfantaBundle/Resources/translations/pagerfanta.ru.xliff', 'ru', 'pagerfanta');
         $instance->addResource('xliff', '/Applications/MAMP/htdocs/mtcommande/src/Mtc/ShopBundle/Resources/translations/messages.fr.xliff', 'fr', 'messages');
+        $instance->addResource('yml', '/Applications/MAMP/htdocs/mtcommande/src/Mtc/UserBundle/Resources/translations/UserBundle.fr.yml', 'fr', 'UserBundle');
 
         return $instance;
     }
@@ -3508,7 +3496,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Sonata\BlockBundle\Twig\Extension\BlockExtension($this->get('sonata.block.manager'), $this->get('sonata.cache.manager'), array('sonata.admin.block.admin_list' => 'sonata.cache.noop', 'sonata.block.service.text' => 'sonata.cache.noop', 'sonata.block.service.action' => 'sonata.cache.noop', 'sonata.block.service.rss' => 'sonata.cache.noop'), $this->get('sonata.block.loader.chain'), $this->get('sonata.block.renderer')));
         $instance->addExtension(new \Knp\Menu\Twig\MenuExtension(new \Knp\Menu\Twig\Helper($this->get('knp_menu.renderer_provider'), $this->get('knp_menu.menu_provider'))));
         $instance->addExtension(new \WhiteOctober\PagerfantaBundle\Twig\PagerfantaExtension($this));
-        $instance->addExtension($this->get('twig.extension.acme.demo'));
         $instance->addGlobal('sonata_user', $this->get('sonata.user.twig.global'));
 
         return $instance;
@@ -3828,7 +3815,7 @@ class appDevDebugProjectContainer extends Container
         $b = $this->get('security.user_checker');
         $c = $this->get('security.encoder_factory');
 
-        return $this->services['security.authentication.manager'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'admin', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('50d5d5f4c3c25'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('50d5d5f4c3c25')));
+        return $this->services['security.authentication.manager'] = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'admin', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('50d855822c55a'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('50d855822c55a')));
     }
 
     /**
@@ -3976,23 +3963,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'twig.extension.acme.demo' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return Acme\DemoBundle\Twig\Extension\DemoExtension A Acme\DemoBundle\Twig\Extension\DemoExtension instance.
-     */
-    protected function getTwig_Extension_Acme_DemoService()
-    {
-        return $this->services['twig.extension.acme.demo'] = new \Acme\DemoBundle\Twig\Extension\DemoExtension($this->get('twig.loader'));
-    }
-
-    /**
      * Gets the 'validator.mapping.class_metadata_factory' service.
      *
      * This service is shared.
@@ -4102,9 +4072,8 @@ class appDevDebugProjectContainer extends Container
                 'SonataEasyExtendsBundle' => 'Sonata\\EasyExtendsBundle\\SonataEasyExtendsBundle',
                 'SimpleThingsEntityAuditBundle' => 'SimpleThings\\EntityAudit\\SimpleThingsEntityAuditBundle',
                 'WhiteOctoberPagerfantaBundle' => 'WhiteOctober\\PagerfantaBundle\\WhiteOctoberPagerfantaBundle',
-                'ApplicationSonataUserBundle' => 'Application\\Sonata\\UserBundle\\ApplicationSonataUserBundle',
                 'MtcShopBundle' => 'Mtc\\ShopBundle\\MtcShopBundle',
-                'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
+                'UserBundle' => 'Mtc\\UserBundle\\UserBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
                 'SensioGeneratorBundle' => 'Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle',
@@ -4123,6 +4092,8 @@ class appDevDebugProjectContainer extends Container
             'mailer_password' => '',
             'locale' => 'fr',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
+            'sonata.user.admin.user.entity' => 'Mtc\\UserBundle\\Entity\\User',
+            'sonata.user.admin.group.entity' => 'Mtc\\UserBundle\\Entity\\Group',
             'router_listener.class' => 'Symfony\\Bundle\\FrameworkBundle\\EventListener\\RouterListener',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
@@ -4448,12 +4419,11 @@ class appDevDebugProjectContainer extends Container
                 17 => 'SonataEasyExtendsBundle',
                 18 => 'SimpleThingsEntityAuditBundle',
                 19 => 'WhiteOctoberPagerfantaBundle',
-                20 => 'ApplicationSonataUserBundle',
-                21 => 'MtcShopBundle',
-                22 => 'AcmeDemoBundle',
-                23 => 'WebProfilerBundle',
-                24 => 'SensioDistributionBundle',
-                25 => 'SensioGeneratorBundle',
+                20 => 'MtcShopBundle',
+                21 => 'UserBundle',
+                22 => 'WebProfilerBundle',
+                23 => 'SensioDistributionBundle',
+                24 => 'SensioGeneratorBundle',
             ),
             'assetic.twig_extension.class' => 'Symfony\\Bundle\\AsseticBundle\\Twig\\AsseticExtension',
             'assetic.twig_formula_loader.class' => 'Assetic\\Extension\\Twig\\TwigFormulaLoader',
@@ -4507,7 +4477,7 @@ class appDevDebugProjectContainer extends Container
             'fos_user.registration.confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig',
             'fos_user.firewall_name' => 'main',
             'fos_user.model_manager_name' => NULL,
-            'fos_user.model.user.class' => 'Application\\Sonata\\UserBundle\\Entity\\User',
+            'fos_user.model.user.class' => 'Mtc\\UserBundle\\Entity\\User',
             'fos_user.template.engine' => 'twig',
             'fos_user.template.theme' => 'FOSUserBundle::form.html.twig',
             'fos_user.profile.form.type' => 'fos_user_profile',
@@ -4624,8 +4594,6 @@ class appDevDebugProjectContainer extends Container
             'sonata.user.form.type.security_roles.class' => 'Sonata\\UserBundle\\Form\\Type\\SecurityRolesType',
             'sonata.user.profile.form.type.class' => 'Sonata\\UserBundle\\Form\\Type\\ProfileType',
             'sonata.user.profile.form.handler.default.class' => 'Sonata\\UserBundle\\Form\\Handler\\ProfileFormHandler',
-            'sonata.user.admin.user.entity' => 'Application\\Sonata\\UserBundle\\Entity\\User',
-            'sonata.user.admin.group.entity' => 'Application\\Sonata\\UserBundle\\Entity\\Group',
             'sonata.user.impersonating_route' => 'homepage',
             'sonata.user.google.authenticator.enabled' => false,
             'sonata.user.profile.form.type' => 'sonata_user_profile',
@@ -4635,8 +4603,8 @@ class appDevDebugProjectContainer extends Container
                 1 => 'Default',
             ),
             'simplethings.entityaudit.audited_entities' => array(
-                0 => 'Application\\Sonata\\UserBundle\\Entity\\User',
-                1 => 'Application\\Sonata\\UserBundle\\Entity\\Group',
+                0 => 'Mtc\\UserBundle\\Entity\\User',
+                1 => 'Mtc\\UserBundle\\Entity\\Group',
             ),
             'simplethings.entityaudit.table_prefix' => '',
             'simplethings.entityaudit.table_suffix' => '_audit',

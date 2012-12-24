@@ -63,7 +63,8 @@ jms_security_extra:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Application\Sonata\UserBundle\Entity\User
+   # user_class: Application\Sonata\UserBundle\Entity\User
+    user_class: Mtc\UserBundle\Entity\User
  
 sonata_block:
     default_contexts: [cms]
@@ -139,3 +140,6 @@ sonata_doctrine_orm_admin:
                 bigint:     SonataAdminBundle:CRUD:base_show_field.html.twig
                 integer:    SonataAdminBundle:CRUD:base_show_field.html.twig
                 decimal:    SonataAdminBundle:CRUD:base_show_field.html.twig
+parameters:
+    sonata.user.admin.user.entity: Mtc\UserBundle\Entity\User
+    sonata.user.admin.group.entity: Mtc\UserBundle\Entity\Group

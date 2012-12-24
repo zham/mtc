@@ -25,9 +25,10 @@ $loader->registerNamespaces(array(
 	
 	'WhiteOctober\PagerfantaBundle' => __DIR__.'/../vendor/bundles',
 	'Pagerfanta'                    => __DIR__.'/../vendor/pagerfanta/src',	
-    'Application'      => __DIR__,	
+    //'Application'      => __DIR__,	
 		
 	'Mtc'             => __DIR__.'/../Mtc',
+	
 	
 		
 ));
