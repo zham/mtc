@@ -1,0 +1,185 @@
+
+
+{% extends "MtcShopBundle::layout.html.twig" %}
+
+{% block body %}
+
+{% include "MtcShopBundle:shop:header.html.twig" %}
+ 
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="twelve columns">
+				<ul class="nav-bar">
+					<li><a href="#">A propos</a></li>
+					<li class="has-flyout">
+						<a href="#">Boucherie</a>
+						<a href="#" class="flyout-toggle"><span> </span></a>
+						<ul class="flyout">
+							<li><a href="#">Boeuf</a></li>
+							<li><a href="#">Porc</a></li>
+							<li><a href="#">Agneau</a></li>
+							<li><a href="#">Volaille</a></li>
+						</ul>
+					</li>
+					<li class="has-flyout">
+						<a href="#">Charcuterie</a>
+						<a href="#" class="flyout-toggle"><span></span></a>
+						<div class="flyout">
+						Content...
+						</div>
+					</li>
+					<li class="has-flyout">
+						<a href="#">Traiteur</a>
+						<a href="#" class="flyout-toggle"><span></span></a>
+						<div class="flyout">
+						Content...
+						</div>
+					</li>
+					<li class="has-flyout">
+						<a href="#">Buffet</a>
+						<a href="#" class="flyout-toggle"><span></span></a>
+						<div class="flyout">
+						Content...
+						</div>
+					</li>
+					<li class="has-flyout">
+						<a href="#">Menus</a>
+						<a href="#" class="flyout-toggle"><span></span></a>
+						<div class="flyout">
+						Content...
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">			
+
+				<div class="twelve columns">
+
+					<div class="slider-background"></div>
+
+					<div id="featured">
+
+						<img src="http://placehold.it/980x390" alt="Overflow: Hidden No More" data-caption="#htmlCaption"/>
+						<img src="http://placehold.it/980x390" alt="Overflow: Hidden No More" data-caption="#htmlCaption"/>
+						<img src="http://placehold.it/980x390" alt="Overflow: Hidden No More" data-caption="#htmlCaption"/>
+
+					</div>
+
+					<!-- Captions for Orbit -->
+
+					<span class="orbit-caption" id="htmlCaption" style="margin-left:10px;">Bienvenue sur ... application de commande et livraison de course en ligne..</span>
+
+				</div>
+
+		</div>
+		<div class="row">
+			<div class="twelve columns">
+				<h2><a href="#">Nouveautés</a></h2>
+			</div>
+		</div>
+		<div class="row">			
+			<div class="three columns">
+				<h3><a href="#">Article 01</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 01" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 02</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 02" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 03</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 03" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 04</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 04" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="twelve columns"><hr /></div>
+		</div>			
+		<div class="row">
+			<div class="twelve columns">
+				<h2><a href="#">Meilleurs Ventes</a></h2>
+			</div>
+		</div>
+		<div class="row">			
+			<div class="three columns">
+				<h3><a href="#">Article 01</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 01" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 02</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 02" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 03</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 03" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+			<div class="three columns">
+				<h3><a href="#">Article 04</a></h3>
+				<a href="#"><img src="http://placehold.it/200x200" alt="Article 04" class="imgwithborder"></a>
+				<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition...</p>
+				<a href="#">Lire &rarr;</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns"><hr /></div>
+		</div>
+		<div class="row">
+			<div class="four columns">
+				<h4>Contactez-nous</h4>
+				<ul class="vcard" style="border:0px;">
+					<li class="org"><strong>mtcommande.fr</strong></li>
+					<li class="fn"><strong>Boucherie Maison Terrier</strong></li>
+					<li class="adr">
+					<li class="street-address">16, rue du Musée</li>
+					<li>
+							<span class="postal-code">59270</span> <span class="locality">Bailleul</span>,
+							<span class="region">Nord</span>
+					</li>
+					<li class="country-name">France</li>
+					<li>Tel: <span class="tel"> <a href="tel:0328492769">+33(0)3.28.49.27.69</a></span></li>
+					<li>Email: <span class="email">contact@mtcommande.fr</span></li>
+				</ul>
+			</div>
+			<div class="four columns">
+				<h4>Informations</h4>
+				<ul class="vcard" style="border:0px;">
+					<li><a href="">Conditions d'utilisation</a></li>
+					<li><a href="">A propos</a></li>
+					<li><a href="">A propos</a></li>
+					<li><a href="">Politique de confidentialité</a></li>
+					<li><a href="">Droits de rétractation</a></li>
+				</ul>
+			</div>
+			<div class="four columns">
+				<h4>...</h4>
+			</div>
+		</div>
+		<div id="myModal" class="reveal-modal [expand, xlarge, large, medium, small]">
+  		
+  		{% include "MtcShopBundle:Security:login.html.twig" %}
+  		
+        	
+  			<a class="close-reveal-modal">&#215;</a>
+		</div>
+	
+{% endblock %}

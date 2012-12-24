@@ -1,0 +1,5 @@
+Il ya des clients.
+
+Ils ont des adresses (adresse livraison et facturation)
+
+

@@ -1,0 +1,3 @@
+MtcShopBundle_homepage:
+    pattern:  /home
+    defaults: { _controller: MtcShopBundle:Shop:index }

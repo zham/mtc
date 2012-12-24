@@ -1,0 +1,7 @@
+parameters:
+#    mtc_shop.example.class: Mtc\ShopBundle\Example
+
+services:
+#    mtc_shop.example:
+#        class: %mtc_shop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

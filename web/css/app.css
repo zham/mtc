@@ -1,0 +1,97 @@
+/* Foundation v2.2.1 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+/* Foundation Icons General Enclosed */
+body{background:#f3f3f3;font:13px/22px Arial, Helvetica, sans-serif;color:#7a6d6b;position:relative;}
+@font-face {
+    font-family: 'FoundationIconsGeneralEnclosed';
+    src: url('../fonts/foundation-icons-general-enclosed.eot');
+    src: url('../fonts/foundation-icons-general-enclosed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/foundation-icons-general-enclosed.woff') format('woff'),
+         url('../fonts/foundation-icons-general-enclosed.ttf') format('truetype'),
+         url('../fonts/foundation-icons-general-enclosed.svg#FoundationIconsGeneralEnclosed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.glyph { cursor: default; font-size: 16px; line-height: 1; }
+	.glyph.general-enclosed { font-family: "FoundationIconsGeneralEnclosed"; }
+	.glyph.social { font-family: "FoundationIconsSocial"; }
+	
+.imgwithborder{
+	border: 4px solid #fff;
+	-webkit-box-shadow: 2px 2px 3px #e6e6e6;
+	-moz-box-shadow: 2px 2px 3px #e6e6e6;
+	box-shadow: 2px 2px 3px #e6e6e6;
+}
+.thumbnail{
+	float:left;
+	margin-right:5px;
+	margin-bottom:5px;
+}
+h2 a{color:#7299b5;}
+
+.dashboard li{list-style-type:none;}
+
+.green{background:#96bc3d;}
+.red{background:#e1370e;}
+.color_white{color:#fff;}
+.color_white:hover{color:#38484d;}
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+.headinfos{height:26px;margin-top:2px;color:#6c93a4;}
+.headinfos .social-share{padding:2px;height:26px;float:right;}
+.headinfos .social-share li{float:left;margin-left:5px;height:26px;list-style-type:none;}
+.headinfos .social-share li:hover{cursor:pointer;}
+.headinfos .social-share a {color: #999999; text-decoration: none;-webkit-transition:0.4s;}
+.headinfos .social-share a:hover { color: #11639d; }
+.headinfos .social-share a:focus { color: #11639d; outline: none; }
+
+
+.social-share-product{padding:2px;height:26px;}
+.social-share-product li{float:left;margin-left:5px;height:26px;list-style-type:none;}
+.social-share-product li:hover{cursor:pointer;}
+.social-share-product a {color: #999999; text-decoration: none;-webkit-transition:0.4s;}
+.social-share-product a:hover { color: #11639d; }
+.social-share-product a:focus { color: #11639d; outline: none; }
+
+.cart .nav-bar {float:right;}
+.cart .nav-bar li {border-right:0px;}
+
+.account .nav-bar {float:right;}
+.account .nav-bar li {border-right:0px;}
+
+.tri{margin-top:-20px;line-height:37px;height:37px;}
+.tri .nav-bar {border-right:0px;margin-left:8px;}
+.tri .nav-bar li {border-right:0px;border-right:0px;}
+
+.cart-tools li{float:left;list-style-type:none;}
+
+.table_large{width:100%;!important}
+.table_large tr td, .table_large tr th{text-align:center;vertical-align:middle;}
+
+@media only screen and (max-width: 767px) {
+	.account .nav-bar {float:none; margin-left:0px;}
+	.account .nav-bar li {border-right:0px;}
+	.account .nav-bar li  .flyout{width:91%;}
+}
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

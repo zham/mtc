@@ -1,0 +1,95 @@
+<div class="row">
+			<div class="five columns">
+				&nbsp;
+			</div>
+			<div class="five columns headinfos">
+				<ul class="social-share">
+					<li>Partager-nous sur :</li>
+					<li><a href=""><span class="glyph social">d</span> Facebook</a></li>
+					<li><a href=""><span class="glyph social">e</span> Twitter</a></li>
+					<li><a href=""><span class="glyph social">l</span> Google +</a></li>
+				</ul>
+				 
+			</div>
+		</div>
+		<div class="row">
+			<div class="three columns">
+				<div class="row">
+					<div class="twelve columns">
+						<h2 style="font-size:24px;">Mtcommande</h2>
+						<p>Commande et livraison de course en ligne.</p>
+					</div>
+				</div>				
+			</div>
+			
+			<div class="three columns">
+				<form action="#" method="#" class="nice">
+					<div class="row collapse">
+						<div class="twelve columns">
+							<label for="search">Mots : Steack haché...</label>
+						</div>
+					</div>
+					<div class="row collapse">
+						<div class="eight mobile-three columns">
+							<input type="text" />
+						</div>
+						<div class="four mobile-one columns">
+							<a href="#" class="postfix button"><span class="glyph general-enclosed">=</span> Ok</a>
+						</div>
+					</div>
+				</form>
+			</div>
+									
+			<div class="three columns">
+				<div class="row account">
+					<div class="twelve columns">
+						<ul class="nav-bar">							
+							<li class="has-flyout">
+								<a href="" data-reveal-id="myModal">
+									<span class="glyph social">x</span >
+										{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+						                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} 
+						                
+							            {% else %}
+							            	Identifiez-vous
+							                {#  a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> #}
+							            {% endif %}
+											
+								</a>
+								<a href="#" class="flyout-toggle"><span> </span></a>
+								<ul class="flyout">
+									<li><a href="#">Votre compte</a></li>
+									<li><a href="#">Vos commandes</a></li>
+									<li><a href="#">Vos listes</a></li>
+									<li><a href="#">Vos adresses</a></li>
+									<li><a href="#">Vos informations personnelles</a></li>							
+								</ul>
+							</li>
+							<li>
+							
+							
+							</li>
+						</ul>					
+					</div>					
+				</div>														
+			</div>
+			<div class="three columns">
+				<div class="row cart">
+					<div class="twelve columns">
+						<ul class="nav-bar">							
+							<li class="has-flyout">
+								<a href="#"><span class="glyph general-enclosed">2</span> Panier - 1 article(s)</a>
+								<a href="#" class="flyout-toggle"><span> </span></a>
+								<ul class="flyout">
+										<li>Expédition : 6.00€</li>
+										<li>Taxe : 19.60€</li>
+										<li>Total : 25.60€</li>								
+										<li><a href="#" class="medium button">Commander</a></li>
+								</ul>
+							</li>
+						</ul>					
+					</div>					
+				</div>														
+			</div>
+		</div>
+		
